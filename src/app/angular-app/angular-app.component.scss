@@ -1,0 +1,17 @@
+.angularapp{
+    text-align: center;
+    background-color: crimson;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    display: block;
+
+    &__title {
+        background-color: steelblue;
+        color: white;
+    }
+
+    &__info {
+        background-color: gold;
+        color: black;
+    }
+}
