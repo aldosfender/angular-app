@@ -1,6 +1,46 @@
 <p>angular-cli works!</p>
 
-<li>
-    <ul>{{title}}</ul>
-    <ul>{{info}}</ul>
-</li>
+<ul>
+    <app-lfcplayer *ngFor="let player of players" [liverpoolPlayer]="player"></app-lfcplayer>   
+</ul>
+
+<div>
+    <p>name: {{ name }}</p>
+    <p>age {{ age }}</p>
+    <p>street number: {{ address.number_street }}</p>
+    <p>street name: {{ address.street }}</p>
+    
+    <ol>
+        <li *ngFor="let club of clubs">{{ club }}
+             <button (click)="firstclick()">Click me!</button>
+             <button (click)="deleteclub(club)">Delete Club</button>
+        </li>
+    </ol>
+</div>
+
+<div>
+    <form (submit)="addclub(newClub)">
+        <input type="text" #newClub>
+        <button>Send Club to Array</button>
+    </form>
+</div>
+
+<div>
+    <p>Valor variable 1: {{ val1 }}</p>
+    <p>Valor variable 2: {{ val2 }}</p>
+    <br>
+    <input type="text" name="valor1" [(ngModel)]="val1"><br><br>
+    <input type="text" name="valor2" [(ngModel)]="val2">
+</div>
+
+<h5>Users from an external API</h5>
+<div class="user" *ngFor="let user of users">
+    <p class="user__main"><strong>ID:</strong> {{ user.id }}</p>
+    <p class="user__main"><strong>Name:</strong> {{ user.name }}</p>
+    <p class="user__main"><strong>Surname:</strong> {{ user.username }}</p>
+    <p class="user__main"><strong>Email:</strong> {{ user.email }}</p>
+</div>
+
+
+
+<p *ngIf="activated">Show the content...</p>
